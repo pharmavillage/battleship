@@ -94,8 +94,6 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 
 ---
 
-Feel free to explore, contribute, and grow with us at Pharmavillage. Together, we can achieve greatness and redefine the future of pharmaceuticals.
-
 > "The lion cannot protect himself from traps, and the fox cannot defend himself from wolves. One must therefore be a fox to recognize traps, and a lion to frighten wolves."
 > – Niccolò Machiavelli
 
