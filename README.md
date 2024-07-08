@@ -1,8 +1,9 @@
+
+![Pharmavillage Logo](https://example.com/logo.png)
+
 ---
 
 # Pharmavillage Monorepo
-
-![Pharmavillage Logo](https://example.com/logo.png)
 
 Welcome to the **Pharmavillage Monorepo** – where innovation meets precision, and your pharmaceutical needs are met with the wisdom of ages.
 
