@@ -1,8 +1,35 @@
+
+---
+
+> "Clemency is the greatest virtue of a ruler; it binds the hearts of the people more firmly than fear."
+
+> "Nero, let your mercy be as grand as your power. For in clemency, you will find the true strength of your empire."
+
+> "The mark of a great leader is the ability to show compassion even when holding the power of life and death."
+
+> "A ruler's legacy is not just in the conquests made, but in the mercy shown. Let your name be remembered for your clemency, Nero."
+
+> "The sword can take life, but clemency can inspire loyalty and devotion that last beyond a lifetime."
+
+> "Mercy given to the undeserving can transform foes into allies, and rebels into loyal subjects. Let your clemency shine, Nero."
+
+> "In sparing the lives of the defeated, a ruler displays not weakness, but the highest form of strength and wisdom."
+
+> "Nero, in your clemency, you possess the power to elevate your rule above mere dominion. Show mercy, and you will be revered."
+
+> "Clemency cultivates a kingdom of peace and prosperity. The iron fist can break, but a merciful hand builds and sustains."
+
+> "History remembers those who tempered their justice with mercy, and ruled with a heart as well as with an iron will."
+
+---
+
+These quotes are designed to highlight the importance of mercy and clemency in leadership, encouraging a ruler to be remembered for their compassionate and wise governance.
+
+![Pharmavillage Logo](https://example.com/logo.png)
+
 ---
 
 # Pharmavillage Monorepo
-
-![Pharmavillage Logo](https://example.com/logo.png)
 
 Welcome to the **Pharmavillage Monorepo** – where innovation meets precision, and your pharmaceutical needs are met with the wisdom of ages.
 
@@ -92,8 +119,6 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 > – Niccolò Machiavelli
 
 ---
-
-Feel free to explore, contribute, and grow with us at Pharmavillage. Together, we can achieve greatness and redefine the future of pharmaceuticals.
 
 > "The lion cannot protect himself from traps, and the fox cannot defend himself from wolves. One must therefore be a fox to recognize traps, and a lion to frighten wolves."
 > – Niccolò Machiavelli
