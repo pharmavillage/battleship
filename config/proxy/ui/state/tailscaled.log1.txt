@@ -1,0 +1,18 @@
+{"logtail":{"client_time":"2024-07-08T00:46:16.317267385Z","proc_id":2142031170,"proc_seq":166},"metrics":"N20portmap_pcp_sentS0204N20portmap_pmp_sentS0404N22portmap_upnp_sentS0604N1enetcheck_reportS0804N28netcheck_report_fullS0a02N2enetcheck_stun_send_ipv4S0c6eN2enetcheck_stun_recv_ipv4S0e6cN4egauge_controlclient_map_requests_activeS1002N34controlclient_map_requestsS1210N3econtrolclient_map_requests_liteS140eN3econtrolclient_map_requests_pollS1602N44controlclient_map_response_messageS1806N3ccontrolclient_map_response_mapS1a06N48controlclient_map_response_map_deltaS1c04N3cgauge_magicsock_num_derp_connsS1e02N2cmagicsock_restun_callsS2004N34magicsock_update_endpointsS2204N24magicsock_send_udpS246eN46gauge_dns_manager_linux_mode_directS2602","text":"tailscaled got signal terminated; shutting down\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.325559718Z","proc_id":2142031170,"proc_seq":167},"text":"control: client.Shutdown ...\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.326701218Z","proc_id":2142031170,"proc_seq":168},"text":"control: updateRoutine: exiting\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.327848468Z","proc_id":2142031170,"proc_seq":169},"v":1,"text":"control: authRoutine: context done.\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.329333218Z","proc_id":2142031170,"proc_seq":170},"text":"control: authRoutine: exiting\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.329708593Z","proc_id":2142031170,"proc_seq":171},"v":1,"text":"control: PollNetMap: context canceled\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.330373218Z","proc_id":2142031170,"proc_seq":172},"text":"control: mapRoutine: exiting\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.33121826Z","proc_id":2142031170,"proc_seq":173},"text":"control: Client.Shutdown done.\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.333972093Z","proc_id":2142031170,"proc_seq":174},"text":"magicsock: closing connection to derp-8 (conn-close), age 15s\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.338424885Z","proc_id":2142031170,"proc_seq":175},"text":"magicsock: 0 active derp conns\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.340258593Z","proc_id":2142031170,"proc_seq":176},"v":1,"text":"warning: fakeRouter.Close: not implemented.\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.340986093Z","proc_id":2142031170,"proc_seq":177},"v":2,"text":"wg: Device closing\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.342992385Z","proc_id":2142031170,"proc_seq":178},"v":2,"text":"wg: Routine: receive incoming mkReceiveFunc - stopped\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.344140593Z","proc_id":2142031170,"proc_seq":179},"v":2,"text":"wg: Routine: receive incoming mkReceiveFunc - stopped\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.350426177Z","proc_id":2142031170,"proc_seq":180},"v":2,"text":"wg: Routine: receive incoming receiveDERP - stopped\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.350647552Z","proc_id":2142031170,"proc_seq":181},"v":2,"text":"wg: Device closed\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.351762343Z","proc_id":2142031170,"proc_seq":182},"text":"flushing log.\n"}
+{"logtail":{"client_time":"2024-07-08T00:46:16.352253968Z","proc_id":2142031170,"proc_seq":183},"text":"logger closing down\n"}

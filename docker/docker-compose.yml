@@ -1,0 +1,3 @@
+include:
+  - ./proxy.yml
+  - ./legacy.yml

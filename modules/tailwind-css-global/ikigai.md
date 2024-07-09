@@ -1,0 +1,1 @@
+this was created for the purpose of us viewing the present themes and also allowing us to disribute our tailwind conventions to a range of platforms as css is agnostic being the underlying technology designed for vue x react and any other web technolgies we may use

@@ -1,0 +1,99 @@
+{
+  "id": "expose_tailwind_css_global",
+  "name": "expose_tailwind_css_global",
+  "metaData": {
+    "name": "expose_tailwind_css_global",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "0.0.0",
+      "buildName": "federated-css-mono_expose-tailwind-css-global"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "expose_tailwind_css_global",
+    "pluginVersion": "0.1.21",
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "singleton": true,
+      "requiredVersion": "^18.2.0",
+      "shareScope": "default",
+      "name": "react",
+      "version": "18.2.0",
+      "eager": false,
+      "id": "expose_tailwind_css_global:react",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "41.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": [
+        "./Component"
+      ]
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "path": "./IndexCSS",
+      "id": "expose_tailwind_css_global:IndexCSS",
+      "name": "IndexCSS",
+      "requires": [],
+      "file": "assets/css/index.css",
+      "assets": {
+        "js": {
+          "sync": [
+            "398.js",
+            "__federation_expose_IndexCSS.js"
+          ],
+          "async": []
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      }
+    },
+    {
+      "path": "./Component",
+      "id": "expose_tailwind_css_global:Component",
+      "name": "Component",
+      "requires": [
+        "react"
+      ],
+      "file": "src/Component.js",
+      "assets": {
+        "js": {
+          "sync": [
+            "398.js",
+            "__federation_expose_Component.js"
+          ],
+          "async": [
+            "41.js"
+          ]
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      }
+    }
+  ]
+}

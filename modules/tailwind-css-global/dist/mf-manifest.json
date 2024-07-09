@@ -1,0 +1,88 @@
+{
+  "id": "expose_tailwind_css_global",
+  "name": "expose_tailwind_css_global",
+  "metaData": {
+    "name": "expose_tailwind_css_global",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "0.0.0",
+      "buildName": "federated-css-mono_expose-tailwind-css-global"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "expose_tailwind_css_global",
+    "pluginVersion": "0.1.21",
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "id": "expose_tailwind_css_global:react",
+      "name": "react",
+      "version": "18.2.0",
+      "singleton": true,
+      "requiredVersion": "^18.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "41.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "expose_tailwind_css_global:IndexCSS",
+      "name": "IndexCSS",
+      "assets": {
+        "js": {
+          "sync": [
+            "398.js",
+            "__federation_expose_IndexCSS.js"
+          ],
+          "async": []
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./IndexCSS"
+    },
+    {
+      "id": "expose_tailwind_css_global:Component",
+      "name": "Component",
+      "assets": {
+        "js": {
+          "sync": [
+            "398.js",
+            "__federation_expose_Component.js"
+          ],
+          "async": [
+            "41.js"
+          ]
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./Component"
+    }
+  ]
+}

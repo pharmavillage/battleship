@@ -1,0 +1,16 @@
+➤ YN0000: · Yarn 4.3.1
+➤ YN0000: ┌ Resolution step
+➤ YN0085: │ + @chromatic-com/storybook@npm:1.6.0, @storybook/addon-essentials@npm:8.1.9, @storybook/addon-interactions@npm:8.1.9, @storybook/addon-links@npm:8.1.9, and 210 more.
+➤ YN0000: └ Completed in 3s 324ms
+➤ YN0000: ┌ Post-resolution validation
+➤ YN0002: │ federated-css-mono_expose-tailwind-css-global@workspace:modules/tailwind-css-global doesn't provide postcss (p7c48f), requested by postcss-loader.
+➤ YN0002: │ federated-css-mono_expose-tailwind-css-global@workspace:modules/tailwind-css-global doesn't provide typescript (paed16), requested by @module-federation/enhanced and other dependencies.
+➤ YN0002: │ vue-counter@workspace:apps/vue-counter doesn't provide @vue/reactivity (pf9346), requested by effector-vue.
+➤ YN0002: │ vue-counter@workspace:apps/vue-counter doesn't provide @vue/runtime-core (p931f3), requested by effector-vue.
+➤ YN0086: │ Some peer dependencies are incorrectly met by your project; run yarn explain peer-requirements <hash> for details, where <hash> is the six-letter p-prefixed code.
+➤ YN0086: │ Some peer dependencies are incorrectly met by dependencies; run yarn explain peer-requirements for details.
+➤ YN0000: └ Completed
+➤ YN0000: ┌ Fetch step
+➤ YN0013: │ 27 packages were added to the project (+ 14.19 MiB).
+➤ YN0000: └ Completed in 1s 162ms
+➤ YN0000: ┌ Link step

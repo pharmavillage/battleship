@@ -1,0 +1,1 @@
+I think we have some good styles for the company now and we could use with a uniform way of federating the styles to all the desired remotes webpack offers a great place to federate and test styles according to storybook

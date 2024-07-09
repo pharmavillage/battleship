@@ -1,0 +1,11 @@
+{
+  "name": "golang-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "go run ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "Golang GraphQL and REST based API"
+}
