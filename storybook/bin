@@ -1,0 +1,15 @@
+"scripts": {
+    "start": "yarn dev:start",
+    "legacy": "npm-run-all --parallel legacy:*",
+    "dev:tailwind": "tailwindcss -o tailwind.css --watch",
+    "prod:start": "rspack serve --config rspack.dev.js",
+    "dev:start": "yarn legacy:start",
+    "storybook": "storybook dev",
+    "build": "npm-run-all --parallel build:*",
+    "build:css": "tailwindcss -o src/tailwind.css --minify",
+    "tailwind:build": "postcss -i tailwind.css -o build.css --minify",
+    "dev": "webpack serve --config webpack.dev.js",
+    "legacy:build": "webpack --config webpack.prod.js",
+    "build:rsp": "rspack --config rspack.prod.js",
+    "build:storybook": "storybook build"
+  },

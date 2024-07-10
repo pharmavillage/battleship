@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "storybook": "yarn lerna run --parallel storybook",
+    "dev": "yarn lerna run --parallel dev",
     "workspaces": "node pkg.js",
     "deps": "yarn"
   },

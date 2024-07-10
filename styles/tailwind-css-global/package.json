@@ -30,7 +30,7 @@
     "webpack-dev-server": "4.15.2"
   },
   "scripts": {
-    "start": "webpack-cli serve",
+    "dev": "webpack-cli serve",
     "build": "webpack --mode production",
     "serve": "serve dist -p 4006",
     "clean": "rm -rf dist",
