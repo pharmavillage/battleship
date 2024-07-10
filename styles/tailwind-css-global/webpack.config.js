@@ -1,42 +1,41 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ModuleFederationPlugin } = require('@module-federation/enhanced');
-const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("@module-federation/enhanced");
+const path = require("path");
 const {
   remotes: { tailwindCssGlobal },
   mfeBaseConfig,
-} = require('../remotes.config');
+} = require("remotes-config");
 
 module.exports = {
-  entry: './src/index',
-  mode: 'development',
+  entry: "./src/index",
+  mode: "development",
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, "dist"),
     },
     headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-      'Access-Control-Allow-Headers':
-        'X-Requested-With, content-type, Authorization',
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization",
     },
     port: tailwindCssGlobal.port,
   },
   output: {
-    publicPath: 'auto',
+    publicPath: "auto",
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         exclude: /node_modules/,
         options: {
-          presets: ['@babel/preset-react'],
+          presets: ["@babel/preset-react"],
         },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },
@@ -45,12 +44,12 @@ module.exports = {
       ...mfeBaseConfig,
       name: tailwindCssGlobal.name,
       exposes: {
-        './IndexCSS': './assets/css/index.css',
-        './Component': './src/Component.js',
+        "./IndexCSS": "./assets/css/index.css",
+        "./Component": "./src/Component.js",
       },
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: "./public/index.html",
     }),
   ],
 };
