@@ -1,5 +1,5 @@
 {
-  "name": "remote-host",
+  "name": "storybook-modules",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "dev:tailwind": "tailwindcss -o tailwind.css --watch",
     "prod:start": "rspack serve --config rspack.dev.js",
     "dev:start": "yarn legacy:start",
-    "dev:storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev",
     "build": "npm-run-all --parallel build:*",
     "build:css": "tailwindcss -o src/tailwind.css --minify",
     "tailwind:build": "postcss -i tailwind.css -o build.css --minify",

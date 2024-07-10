@@ -1,8 +1,11 @@
-
 ## Apps
 
-* Golang
-  * Add the http server to servers
-* Hi
-* HI
-*
+- Golang
+  - Add the http server to servers
+- Hi
+- HI
+-
+
+###### Repositories
+
+- Make all the repositories submodules ect to alllow for segmented intitialisations limiting size of repositories
