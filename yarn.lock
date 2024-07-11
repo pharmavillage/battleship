@@ -10907,9 +10907,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"federated-css-mono_expose-tailwind-css-global@workspace:styles/tailwind-css-global":
+"federated-css-tailwind-css-global@workspace:styles/tailwind-css-global":
   version: 0.0.0-use.local
-  resolution: "federated-css-mono_expose-tailwind-css-global@workspace:styles/tailwind-css-global"
+  resolution: "federated-css-tailwind-css-global@workspace:styles/tailwind-css-global"
   dependencies:
     "@babel/core": "npm:7.24.7"
     "@babel/preset-react": "npm:7.24.7"

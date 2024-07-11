@@ -6,6 +6,9 @@ const pkg = require("./package.json");
 
 module.exports = merge(common, {
   mode: "development",
+  output: {
+    publicPath: "auto", // Automatically determines the publicPath based on the script path
+  },
   entry: "./src",
   plugins: [
     new HtmlWebpackPlugin({
@@ -13,7 +16,7 @@ module.exports = merge(common, {
     }),
   ],
   devServer: {
-    port: veinFinder(pkg),
+    port: veinFinder(pkg["name"]),
     hot: true,
     compress: true,
     watchFiles: ["src/**/*"],

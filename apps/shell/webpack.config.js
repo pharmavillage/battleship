@@ -1,6 +1,6 @@
 const { ModuleFederationPlugin } = require("webpack").container;
 const { VueLoaderPlugin } = require("vue-loader");
-const { RemoteConfig } = require("remotes-config");
+const { RemoteConfig, veinFinder } = require("remotes-config");
 const path = require("path");
 const pkg = require("./package.json");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -9,10 +9,10 @@ module.exports = {
   entry: "./src/index",
   mode: "development",
   devServer: {
+    port: veinFinder(pkg["name"]),
     static: {
       directory: path.join(__dirname, "dist"),
     },
-    port: veinFinder(pkg["name"]),
   },
   output: {
     publicPath: "auto",

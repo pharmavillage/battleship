@@ -1,5 +1,7 @@
-function getConfig(key) {
-  switch (key) {
+// const pkg = require("./package.json");
+
+function getConfig(pkg_json) {
+  switch (pkg_json) {
     case "store":
       return {
         port: 32001,
@@ -27,6 +29,15 @@ function getConfig(key) {
           "styled-components": { singleton: true },
         },
       };
+    case "remote-library":
+      return {
+        port: 32004,
+        shared: {
+          react: { singleton: true },
+          "react-dom": { singleton: true },
+          "styled-components": { singleton: true },
+        },
+      };
     case "vue-counter":
       return {
         port: 32003,
@@ -48,7 +59,7 @@ function getConfig(key) {
         shared: {
           react: { singleton: true },
           "react-dom": { singleton: true },
-          vue: { singleton: true, requiredVersion: pkg.dependencies.vue },
+          vue: { singleton: true },
           effector: { singleton: true },
           "effector-react": { singleton: true },
           "effector-vue": { singleton: true },
@@ -60,23 +71,10 @@ function getConfig(key) {
      *
      *
      *========================**/
-
-    case "css":
-      return { port: 32004 };
-    case "cssModule":
-      return { port: 32005 };
-    case "jss":
-      return { port: 32006 };
-    case "less":
-      return { port: 32007 };
-    case "scss":
-      return { port: 32008 };
     case "styledComponent":
       return { port: 32009 };
-    case "tailwindCssGlobal":
+    case "federated-css-tailwind-css-global":
       return { port: 32010 };
-    case "tailwindCssModule":
-      return { port: 32011 };
     /**=======================
      * !      MISC
      *
@@ -88,7 +86,9 @@ function getConfig(key) {
 }
 
 function veinFinder(name) {
-  return getConfig(name)["port"];
+  const port = getConfig(name).port;
+  console.log("found port", port);
+  return port;
 }
 
 function getRemoteEntryUrl(port, name) {
@@ -106,14 +106,24 @@ function getRemoteEntryUrl(port, name) {
 }
 
 class RemoteConfig {
-  constructor(pkg, remotes) {
-    const { name } = pkg;
-    const { shared, port } = getConfig(pkg);
-    (this.filename = "remoteEntry.js"), (this.name = name);
+  constructor(pkg, remotes = []) {
+    console.log("REMOTECONF:" + JSON.stringify({ pkg: pkg.name, remotes }));
+    const name = pkg.name;
+    const shared = getConfig(name).shared || {};
+
+    // Assuming `remotes` is an array of keys
+    const remotesArray = remotes.map((remoteName) => {
+      return { [remoteName]: getRemoteEntryUrl(veinFinder(remoteName), remoteName) };
+    });
+
+    const remotesObject = remotesArray.reduce((acc, curr) => {
+      return Object.assign(acc, curr);
+    }, {});
+
+    this.filename = "remoteEntry.js";
+    this.name = name;
     this.shared = shared;
-    this.remotes = () => {
-      return remotes.map((key) => ({ [key]: getRemoteEntryUrl(veinFinder(name), name) })) || {};
-    };
+    this.remotes = remotesObject;
   }
 }
 

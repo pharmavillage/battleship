@@ -1,6 +1,5 @@
 const { ModuleFederationPlugin } = require("webpack").container;
-const { RemoteConfig } = require("remotes-config");
-const path = require("path");
+const { RemoteConfig, veinFinder } = require("remotes-config");
 const pkg = require("./package.json");
 
 module.exports = {

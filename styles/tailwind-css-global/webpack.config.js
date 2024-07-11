@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("@module-federation/enhanced");
-const { RemoteConfig } = require("remotes-config");
+const { RemoteConfig, veinFinder } = require("remotes-config");
 const path = require("path");
 const pkg = require("./package.json");
 

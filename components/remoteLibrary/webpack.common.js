@@ -1,5 +1,6 @@
 const { ModuleFederationPlugin } = require("@module-federation/enhanced");
 const { RemoteConfig } = require("remotes-config");
+const pkg = require("./package.json");
 
 module.exports = {
   target: ["web", "es5"],
