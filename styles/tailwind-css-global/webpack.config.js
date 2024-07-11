@@ -1,10 +1,8 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("@module-federation/enhanced");
+const { RemoteConfig } = require("remotes-config");
 const path = require("path");
-const {
-  remotes: { tailwindCssGlobal },
-  mfeBaseConfig,
-} = require("remotes-config");
+const pkg = require("./package.json");
 
 module.exports = {
   entry: "./src/index",
@@ -18,7 +16,7 @@ module.exports = {
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
       "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization",
     },
-    port: tailwindCssGlobal.port,
+    port: veinFinder(pkg["name"]),
   },
   output: {
     publicPath: "auto",
@@ -41,8 +39,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      ...mfeBaseConfig,
-      name: tailwindCssGlobal.name,
+      ...new RemoteConfig(pkg),
       exposes: {
         "./IndexCSS": "./assets/css/index.css",
         "./Component": "./src/Component.js",

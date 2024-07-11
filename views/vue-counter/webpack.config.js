@@ -1,47 +1,48 @@
-const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { ModuleFederationPlugin } = require('webpack').container;
+const path = require("path");
+const { VueLoaderPlugin } = require("vue-loader");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { RemoteConfig, veinFinder } = require("remotes-config");
+const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = () => ({
-  mode: 'development',
+  mode: "development",
   cache: false,
-  devtool: 'source-map',
+  devtool: "source-map",
   optimization: {
     minimize: false,
   },
-  target: 'web',
-  entry: path.resolve(__dirname, './src/index.js'),
+  target: "web",
+  entry: path.resolve(__dirname, "./src/index.js"),
   output: {
-    publicPath: 'auto',
+    publicPath: "auto",
   },
   resolve: {
-    extensions: ['.vue', '.js', '.json'],
+    extensions: [".vue", ".js", ".json"],
     alias: {
-      vue: '@vue/runtime-dom',
+      vue: "@vue/runtime-dom",
     },
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        use: 'vue-loader',
+        use: "vue-loader",
       },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime'],
+            presets: ["@babel/preset-env"],
+            plugins: ["@babel/plugin-transform-runtime"],
           },
         },
       },
       {
         test: /\.png$/,
         use: {
-          loader: 'url-loader',
+          loader: "url-loader",
           options: { limit: 8192 },
         },
       },
@@ -52,49 +53,24 @@ module.exports = () => ({
             loader: MiniCssExtractPlugin.loader,
             options: {},
           },
-          'css-loader',
+          "css-loader",
         ],
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: "[name].css",
     }),
     new ModuleFederationPlugin({
-      name: 'vue_counter',
-      filename: 'remoteEntry.js',
-      remotes: {
-        store: `store@${getRemoteEntryUrl(55955)}`,
-      },
+      ...new RemoteConfig(pkg, ["store"]),
       exposes: {
-        './VueCounter': './src/bootstrap',
-      },
-      shared: {
-        vue: { singleton: true },
-        effector: { singleton: true },
-        'effector-vue': { singleton: true },
-        'styled-components': { singleton: true },
+        "./VueCounter": "./src/bootstrap",
       },
     }),
     new VueLoaderPlugin(),
   ],
   devServer: {
-    port: 51997,
+    port: veinFinder(pkg["name"]),
   },
 });
-
-function getRemoteEntryUrl(port) {
-  const { CODESANDBOX_SSE, HOSTNAME = '' } = process.env;
-
-  // Check if the example is running on codesandbox
-  // https://codesandbox.io/docs/environment
-  if (!CODESANDBOX_SSE) {
-    return `//localhost:${port}/remoteEntry.js`;
-  }
-
-  const parts = HOSTNAME.split('-');
-  const codesandboxId = parts[parts.length - 1];
-
-  return `//${codesandboxId}-${port}.sse.codesandbox.io/remoteEntry.js`;
-}
