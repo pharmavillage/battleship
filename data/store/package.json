@@ -1,5 +1,5 @@
 {
-  "name": "shared-store",
+  "name": "store",
   "private": true,
   "repository": {
     "type": "git",

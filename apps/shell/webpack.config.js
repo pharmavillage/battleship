@@ -8,12 +8,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index",
   mode: "development",
-  devServer: {
-    port: veinFinder(pkg["name"]),
-    static: {
-      directory: path.join(__dirname, "dist"),
-    },
-  },
   output: {
     publicPath: "auto",
   },
@@ -41,11 +35,17 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      ...new RemoteConfig(pkg, ["react_counter", " store", " vue_counter"]),
+      ...new RemoteConfig(pkg, ["react_counter", "store", "vue_counter"]),
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
     new VueLoaderPlugin(),
   ],
+  devServer: {
+    port: veinFinder(pkg.name),
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+  },
 };

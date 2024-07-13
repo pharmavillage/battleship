@@ -16,6 +16,7 @@ packages:
   - controller/**
   - core/**
   - coverage/**
+  - data/**
   - database/**
   - debug/**
   - docker/**
@@ -42,7 +43,7 @@ packages:
   - scripts/**
   - server/**
   - source/**
-  - storybook/**
+  # - storybook/**
   - styles/**
   - temp/**
   - templates/**
@@ -51,4 +52,6 @@ packages:
   - utils/**
   - vid/**
   - views/**
+  - views/react_counter
+  - views/vue_counter
   - web/**

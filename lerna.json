@@ -19,6 +19,7 @@
     "controller/**",
     "core/**",
     "coverage/**",
+    "data/**",
     "database/**",
     "debug/**",
     "docker/**",
@@ -45,7 +46,6 @@
     "scripts/**",
     "server/**",
     "source/**",
-    "storybook/**",
     "styles/**",
     "temp/**",
     "templates/**",
@@ -54,6 +54,8 @@
     "utils/**",
     "vid/**",
     "views/**",
+    "views/react-counter",
+    "views/vue-counter",
     "web/**"
   ]
 }

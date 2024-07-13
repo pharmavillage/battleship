@@ -3,6 +3,7 @@ const { VueLoaderPlugin } = require("vue-loader");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { RemoteConfig, veinFinder } = require("remotes-config");
 const { ModuleFederationPlugin } = require("webpack").container;
+const pkg = require("./package.json");
 
 module.exports = () => ({
   mode: "development",

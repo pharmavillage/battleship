@@ -1,5 +1,5 @@
 {
-  "name": "react-counter",
+  "name": "react_counter",
   "version": "0.0.0",
   "private": true,
   "repository": {
@@ -19,7 +19,7 @@
     "webpack-dev-server": "4.15.2"
   },
   "scripts": {
-    "start": "webpack serve --config webpack.config.js",
+    "dev": "webpack serve --config webpack.config.js",
     "build": "webpack --mode production",
     "serve": "serve dist -p 62621",
     "clean": "rm -rf dist"
