@@ -1,0 +1,339 @@
+components:
+  base_button: &base_button
+    type: button
+    color: primary # Default color for buttons
+    # Other common properties for button components
+
+  base_number: &base_number
+    type: number
+    # Other common properties for number components
+
+  base_label: &base_label
+    type: label
+    # Other common properties for label components
+
+  base_input: &base_input
+    type: input
+    # Other common properties for input components
+
+  base_list: &base_list
+    type: list
+    # Other common properties for list components
+
+  base_avatar: &base_avatar
+    type: avatar
+    # Other common properties for avatar components
+
+  base_modal: &base_modal
+    type: modal
+    # Other common properties for modal components
+
+  base_notification: &base_notification
+    type: notification
+    # Other common properties for notification components
+
+  base_dropdown: &base_dropdown
+    type: dropdown
+    # Other common properties for dropdown components
+
+  base_checkbox: &base_checkbox
+    type: checkbox
+    # Other common properties for checkbox components
+
+  base_radio: &base_radio
+    type: radio
+    # Other common properties for radio components
+
+variations:
+  # Button variations
+  - &action_button
+    <<: *base_button
+    label: Action Button
+    color: blue
+    size: large
+    # Additional properties specific to this variation
+
+  - &submit_button
+    <<: *base_button
+    label: Submit Button
+    color: green
+    # Additional properties specific to this variation
+
+  - &another_button
+    <<: *base_button
+    label: Another Button
+    color: red
+    # Additional properties specific to this variation
+
+  - &fourth_button
+    <<: *base_button
+    label: Fourth Button
+    color: yellow
+    # Additional properties specific to this variation
+
+  # Number variations
+  - &primary_number
+    <<: *base_number
+    label: Primary Number
+    format: integer
+    # Additional properties specific to this variation
+
+  - &decimal_number
+    <<: *base_number
+    label: Decimal Number
+    format: decimal
+    # Additional properties specific to this variation
+
+  # Label variations
+  - &important_label
+    <<: *base_label
+    text: Important Label
+    color: red
+    # Additional properties specific to this variation
+
+  - &info_label
+    <<: *base_label
+    text: Information Label
+    color: blue
+    # Additional properties specific to this variation
+
+  # Input variations
+  - &user_input
+    <<: *base_input
+    label: User Input
+    placeholder: Enter text...
+    # Additional properties specific to this variation
+
+  - &password_input
+    <<: *base_input
+    label: Password Input
+    type: password
+    # Additional properties specific to this variation
+
+  # List variations
+  - &basic_list
+    <<: *base_list
+    label: Basic List
+    items:
+      - Item 1
+      - Item 2
+      - Item 3
+    # Additional properties specific to this variation
+
+  - &ordered_list
+    <<: *base_list
+    label: Ordered List
+    ordered: true
+    items:
+      - Item A
+      - Item B
+      - Item C
+    # Additional properties specific to this variation
+
+  # Avatar variations
+  - &default_avatar
+    <<: *base_avatar
+    username: JohnDoe
+    size: medium
+    # Additional properties specific to this variation
+
+  - &custom_avatar
+    <<: *base_avatar
+    username: JaneSmith
+    size: small
+    # Additional properties specific to this variation
+
+  # Modal variations
+  - &info_modal
+    <<: *base_modal
+    title: Information Modal
+    content: This is an information message.
+    # Additional properties specific to this variation
+
+  - &confirmation_modal
+    <<: *base_modal
+    title: Confirmation Modal
+    content: Are you sure you want to proceed?
+    # Additional properties specific to this variation
+
+  # Notification variations
+  - &success_notification
+    <<: *base_notification
+    message: Operation successful!
+    type: success
+    # Additional properties specific to this variation
+
+  - &error_notification
+    <<: *base_notification
+    message: Error occurred!
+    type: error
+    # Additional properties specific to this variation
+
+  # Dropdown variations
+  - &dropdown_menu
+    <<: *base_dropdown
+    label: Dropdown Menu
+    options:
+      - Option 1
+      - Option 2
+      - Option 3
+    # Additional properties specific to this variation
+
+  - &select_menu
+    <<: *base_dropdown
+    label: Select Menu
+    options:
+      - Select Option A
+      - Select Option B
+      - Select Option C
+    # Additional properties specific to this variation
+
+  # Checkbox variations
+  - &checkbox_group
+    <<: *base_checkbox
+    label: Checkbox Group
+    options:
+      - label: Option 1
+        value: option1
+      - label: Option 2
+        value: option2
+    # Additional properties specific to this variation
+
+  - &checkbox_list
+    <<: *base_checkbox
+    label: Checkbox List
+    options:
+      - label: Choice A
+        value: choiceA
+      - label: Choice B
+        value: choiceB
+      - label: Choice C
+        value: choiceC
+    # Additional properties specific to this variation
+
+  # Radio variations
+  - &radio_group
+    <<: *base_radio
+    label: Radio Group
+    options:
+      - label: Option A
+        value: optionA
+      - label: Option B
+        value: optionB
+    # Additional properties specific to this variation
+
+  - &toggle_radio
+    <<: *base_radio
+    label: Toggle Radio
+    options:
+      - label: Toggle Option X
+        value: toggleX
+      - label: Toggle Option Y
+        value: toggleY
+    # Additional properties specific to this variation
+
+# Pages defined in the application
+pages:
+  - name: home
+    layout:
+      - centered
+    sections:
+      - name: welcome
+        components:
+          - label
+          - button
+
+  - name: jobList
+    layout:
+      - centered
+    sections:
+      - name: jobListing
+        components:
+          - number
+          - label
+          - button
+
+  - name: jobDetails
+    layout:
+      - full-width
+    sections:
+      - name: jobInfo
+        components:
+          - label
+          - button
+          - avatar
+
+  - name: jobCreate
+    layout:
+      - centered
+    sections:
+      - name: createForm
+        components:
+          - input
+          - button
+          - modal
+
+  - name: userProfile
+    layout:
+      - full-width
+    sections:
+      - name: profileInfo
+        components:
+          - avatar
+          - label
+          - button
+          - dropdown
+          - checkbox
+
+# Modules or functionalities encapsulated in the application
+modules:
+  - name: Jobs
+    description: Manages job-related functionality
+    dependencies:
+      - jobList
+      - jobDetails
+      - jobCreate
+
+  - name: Authentication
+    description: Handles user authentication and authorization
+    dependencies:
+      - button
+      - input
+
+  - name: Notifications
+    description: Manages notifications for job applications and updates
+    dependencies:
+      - notification
+      - button
+
+  - name: UserManagement
+    description: Manages user profiles and settings
+    dependencies:
+      - userProfile
+      - avatar
+      - label
+
+  - name: Internationalization
+    description: Provides support for multiple languages
+    dependencies:
+      - label
+      - button
+
+  - name: Preferences
+    description: Manages user preferences and settings
+    dependencies:
+      - userProfile
+      - dropdown
+      - checkbox
+
+# Additional configuration or settings
+configuration:
+  theme: light
+  language: en-US
+  analytics: true
+  logging: true
+  notifications: true
+  internationalization: true
+  timezone: UTC
+  currency: USD
+  darkMode: false

@@ -1,0 +1,11 @@
+files:
+  - filename: go.work
+    content: |
+      go 1.22
+  - filename: lerna.json
+    $schema: "node_modules/lerna/schemas/lerna-schema.json"
+    content:
+      lerna: "3.22.1"
+      packages:
+        - "packages/*"
+      version: "0.0.0"
