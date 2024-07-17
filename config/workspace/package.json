@@ -1,5 +1,5 @@
 {
- "name": "pkg-config",
+  "name": "workspace-config",
   "version": "1.0.0",
   "main": "fileContents.yml",
   "license": "ISC"

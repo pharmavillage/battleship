@@ -1,0 +1,1 @@
+global styles allow for the styles to be accesible from whereever the location as all repos are connected by either yarn workspaces or connected by webpack module federation

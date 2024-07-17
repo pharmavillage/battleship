@@ -1,0 +1,6 @@
+A view is a small section of a screen that can also be displayed standalone such as
+
+dashboard-view
+account-view
+
+This will display the contents of the view as the central peice wihtout headers ect as these would be included in the page version

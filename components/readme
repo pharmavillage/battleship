@@ -1,0 +1,23 @@
+---
+
+
+---
+# Introduction
+
+This is a area where the components are stored that will be used within other folders through yarn workspaces 
+
+
+
+# Usage
+
+
+To create a component, follow these steps:
+
+1. Navigate to the root directory of the monorepo.
+2. Run the following command:
+
+```bash
+slipway
+```
+
+(Note: This command focuses on the code behind the components used within the app. The Storybook implementation is located elsewhere.)

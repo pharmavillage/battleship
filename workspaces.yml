@@ -41,6 +41,8 @@ packages:
   - queue/**
   - router/**
   - scripts/**
+  #  - scripts/**
+  # - scripts/**
   - server/**
   - source/**
   # - storybook/**
