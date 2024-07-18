@@ -3,5 +3,11 @@
 	"compilerOptions": {
 		"outDir": "dist"
 	},
-	"include": ["source"]
+	"include": [
+		"source"
+	],
+	"ts-node": {
+		"transpileOnly": true,
+		"files": true
+	}
 }

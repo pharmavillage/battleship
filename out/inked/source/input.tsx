@@ -10,7 +10,6 @@ export const InputBox = () => {
       <Box marginRight={1}>
         <Text>Enter your query:</Text>
       </Box>
-
       <TextInput value={query} onChange={setQuery} />
     </Box>
   );
