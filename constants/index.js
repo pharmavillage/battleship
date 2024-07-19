@@ -1,14 +1,5 @@
-const getAbsolutePath = require("m-i-file");
-const slipway = require("./slipway.yml");
-const workspaces = require("./workspaces.yml");
+const path = require("path");
+const slipway = require(path.resolve(__dirname, "slipway.yml"));
+const corbitae = require(path.resolve(__dirname, "corbitae.yml"));
 
-// Functions to get the absolute paths of slipway.yml and workspaces.yml
-function getSlipwayPath() {
-  return getAbsolutePath("slipway.yml");
-}
-
-function getWorkspacesPath() {
-  return getAbsolutePath("workspaces.yml");
-}
-
-module.exports = { slipway, workspaces, path: { getSlipwayPath, getWorkspacesPath } };
+module.exports = { slipway, corbitae };

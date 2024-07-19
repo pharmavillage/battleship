@@ -1,0 +1,11 @@
+{
+  "name": "package-sync",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "These are gloabl tools tthat are used in the repo such as ones to scafold components ect ect"
+}

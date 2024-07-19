@@ -1,0 +1,1 @@
+make a script that does ahealth check and it the health check fails to sign into the wifi using puppeteer ready for server setup perhaps a git pull always and then have a post pull command such as restart docker even load balancing when things get too heated spin up a virtual env and use the router to route requests to cloud env too

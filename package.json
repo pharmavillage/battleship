@@ -5,7 +5,7 @@
   "scripts": {
     "storybook": "yarn lerna run --parallel storybook",
     "dev": "yarn lerna run --parallel dev",
-    "workspaces": "yarn workspace-config",
+    "install": "pnpm install",
     "deps": "yarn"
   },
   "workspaces": {
@@ -22,7 +22,7 @@
       "components/**",
       "composables/**",
       "config/**",
-      "constants/**",
+      "constants",
       "content/**",
       "controller/**",
       "core/**",
