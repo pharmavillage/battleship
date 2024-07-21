@@ -5,8 +5,9 @@
   "scripts": {
     "storybook": "yarn lerna run --parallel storybook",
     "dev": "yarn lerna run --parallel dev",
-    "install": "pnpm install",
-    "deps": "yarn"
+    "deps": "yarn",
+    "upgraded": "yarn upgrade-all",
+    "build": "echo built"
   },
   "workspaces": {
     "packages": [
@@ -66,7 +67,8 @@
     ]
   },
   "devDependencies": {
-    "lerna": "^8.1.5"
+    "lerna": "^8.1.6",
+    "yarn-upgrade-all": "^0.7.2"
   },
   "packageManager": "yarn@4.3.1"
 }

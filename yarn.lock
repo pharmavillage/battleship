@@ -16216,7 +16216,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lerna@npm:^8.1.5":
+"lerna@npm:^8.1.6":
   version: 8.1.6
   resolution: "lerna@npm:8.1.6"
   dependencies:
@@ -20379,9 +20379,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react_counter@workspace:views/react-counter":
+"react_counter@workspace:modules/react-counter":
   version: 0.0.0-use.local
-  resolution: "react_counter@workspace:views/react-counter"
+  resolution: "react_counter@workspace:modules/react-counter"
   dependencies:
     "@babel/core": "npm:7.24.7"
     "@babel/preset-react": "npm:7.24.7"
@@ -21033,7 +21033,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    lerna: "npm:^8.1.5"
+    lerna: "npm:^8.1.6"
+    yarn-upgrade-all: "npm:^0.7.2"
   languageName: unknown
   linkType: soft
 
@@ -23779,9 +23780,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue_counter@workspace:views/vue-counter":
+"vue_counter@workspace:modules/vue-counter":
   version: 0.0.0-use.local
-  resolution: "vue_counter@workspace:views/vue-counter"
+  resolution: "vue_counter@workspace:modules/vue-counter"
   dependencies:
     "@babel/core": "npm:^7.11.0"
     "@babel/plugin-transform-runtime": "npm:7.24.7"
@@ -24844,6 +24845,15 @@ __metadata:
     y18n: "npm:^5.0.5"
     yargs-parser: "npm:^20.2.2"
   checksum: 10c0/b1dbfefa679848442454b60053a6c95d62f2d2e21dd28def92b647587f415969173c6e99a0f3bab4f1b67ee8283bf735ebe3544013f09491186ba9e8a9a2b651
+  languageName: node
+  linkType: hard
+
+"yarn-upgrade-all@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "yarn-upgrade-all@npm:0.7.2"
+  bin:
+    yarn-upgrade-all: build/index.js
+  checksum: 10c0/9c004879f6f82dc2fca6a5a62553b408d6e4c863d0a038c68cc95175f12cf30aeb09bae8a7948c96dda4cfd9403916f73ccbb664513e6c1007e012e60e8f85a9
   languageName: node
   linkType: hard
 
