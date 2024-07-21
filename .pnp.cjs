@@ -143,6 +143,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["lerna", "npm:8.1.6"],\
+          ["strip-ansi", "npm:6.0.1"],\
           ["yarn-upgrade-all", "npm:0.7.2"]\
         ],\
         "linkType": "SOFT"\
@@ -29698,6 +29699,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["root", "workspace:."],\
           ["lerna", "npm:8.1.6"],\
+          ["strip-ansi", "npm:6.0.1"],\
           ["yarn-upgrade-all", "npm:0.7.2"]\
         ],\
         "linkType": "SOFT"\
