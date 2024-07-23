@@ -1,5 +1,6 @@
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
+const pkg = require("./package.json");
 
 module.exports = merge(common, {
   mode: "production",
@@ -8,7 +9,7 @@ module.exports = merge(common, {
     filename: "bundle.js",
     library: {
       type: "commonjs",
-      name: "remoteLibrary",
+      name: pkg["name"],
     },
   },
 });

@@ -21905,24 +21905,111 @@ __metadata:
   languageName: node
   linkType: hard
 
-"store@workspace:database/ webpack":
+"storybook-config@workspace:config/storybook":
   version: 0.0.0-use.local
-  resolution: "store@workspace:database/ webpack"
+  resolution: "storybook-config@workspace:config/storybook"
+  languageName: unknown
+  linkType: soft
+
+"storybook-modules@workspace:storybook/modules":
+  version: 0.0.0-use.local
+  resolution: "storybook-modules@workspace:storybook/modules"
   dependencies:
     "@babel/core": "npm:7.24.7"
-    babel-loader: "npm:9.1.3"
-    effector: "npm:^22.8.7"
-    html-webpack-plugin: "npm:^5.6.0"
-    serve: "npm:13.0.4"
-    webpack: "npm:5.92.1"
+    "@babel/preset-react": "npm:7.24.7"
+    "@chromatic-com/storybook": "npm:^1.5.0"
+    "@headlessui/react": "npm:^2.0.4"
+    "@heroicons/react": "npm:^2.1.4"
+    "@module-federation/enhanced": "npm:0.1.18"
+    "@rspack/cli": "npm:0.6.5"
+    "@rspack/core": "npm:0.6.5"
+    "@rspack/dev-server": "npm:0.6.5"
+    "@storybook/addon-actions": "npm:^8.1.10"
+    "@storybook/addon-essentials": "npm:^8.1.9"
+    "@storybook/addon-interactions": "npm:^8.1.9"
+    "@storybook/addon-links": "npm:^8.1.9"
+    "@storybook/addon-onboarding": "npm:^8.1.9"
+    "@storybook/addon-webpack5-compiler-swc": "npm:^1.0.3"
+    "@storybook/blocks": "npm:^8.1.9"
+    "@storybook/cli": "npm:^8.1.9"
+    "@storybook/react-webpack5": "npm:^8.1.9"
+    "@storybook/test": "npm:^8.1.9"
+    "@tailwindcss/aspect-ratio": "npm:^0.4.2"
+    "@tailwindcss/forms": "npm:^0.5.7"
+    babel-loader: "npm:8.3.0"
+    child_process: "npm:^1.0.2"
+    clsx: "npm:^2.1.1"
+    css-loader: "npm:^7.1.2"
+    html-webpack-plugin: "npm:5.6.0"
+    npm-run-all: "npm:^4.1.5"
+    path: "npm:^0.12.7"
+    postcss: "npm:8.4.38"
+    postcss-loader: "npm:^8.1.1"
+    postcss-preset-env: "npm:9.5.14"
+    react: "npm:18"
+    react-dom: "npm:18"
+    react-router-dom: "npm:^6.23.1"
+    storybook: "npm:^8.1.9"
+    style-loader: "npm:^4.0.0"
+    tailwindcss: "npm:3.4.4"
+    tailwindcss-bg-patterns: "npm:^0.3.0"
+    tailwindcss-classnames: "npm:^3.1.0"
+    tw-to-css: "npm:^0.0.12"
+    typescript: "npm:^5.4.5"
+    webpack: "npm:5.91.0"
     webpack-cli: "npm:4.10.0"
     webpack-dev-server: "npm:4.15.2"
   languageName: unknown
   linkType: soft
 
-"storybook-config@workspace:config/storybook":
+"storybook-pages@workspace:storybook/pages":
   version: 0.0.0-use.local
-  resolution: "storybook-config@workspace:config/storybook"
+  resolution: "storybook-pages@workspace:storybook/pages"
+  dependencies:
+    "@babel/core": "npm:7.24.7"
+    "@babel/preset-react": "npm:7.24.7"
+    "@chromatic-com/storybook": "npm:^1.5.0"
+    "@headlessui/react": "npm:^2.0.4"
+    "@heroicons/react": "npm:^2.1.4"
+    "@module-federation/enhanced": "npm:0.1.18"
+    "@rspack/cli": "npm:0.6.5"
+    "@rspack/core": "npm:0.6.5"
+    "@rspack/dev-server": "npm:0.6.5"
+    "@storybook/addon-actions": "npm:^8.1.10"
+    "@storybook/addon-essentials": "npm:^8.1.9"
+    "@storybook/addon-interactions": "npm:^8.1.9"
+    "@storybook/addon-links": "npm:^8.1.9"
+    "@storybook/addon-onboarding": "npm:^8.1.9"
+    "@storybook/addon-webpack5-compiler-swc": "npm:^1.0.3"
+    "@storybook/blocks": "npm:^8.1.9"
+    "@storybook/cli": "npm:^8.1.9"
+    "@storybook/react-webpack5": "npm:^8.1.9"
+    "@storybook/test": "npm:^8.1.9"
+    "@tailwindcss/aspect-ratio": "npm:^0.4.2"
+    "@tailwindcss/forms": "npm:^0.5.7"
+    babel-loader: "npm:8.3.0"
+    child_process: "npm:^1.0.2"
+    clsx: "npm:^2.1.1"
+    css-loader: "npm:^7.1.2"
+    html-webpack-plugin: "npm:5.6.0"
+    npm-run-all: "npm:^4.1.5"
+    path: "npm:^0.12.7"
+    postcss: "npm:8.4.38"
+    postcss-loader: "npm:^8.1.1"
+    postcss-preset-env: "npm:9.5.14"
+    react: "npm:18"
+    react-dom: "npm:18"
+    react-router-dom: "npm:^6.23.1"
+    storybook: "npm:^8.1.9"
+    style-loader: "npm:^4.0.0"
+    tailwindcss: "npm:3.4.4"
+    tailwindcss-bg-patterns: "npm:^0.3.0"
+    tailwindcss-classnames: "npm:^3.1.0"
+    tw-to-css: "npm:^0.0.12"
+    typescript: "npm:^5.4.5"
+    webpack: "npm:5.91.0"
+    webpack-cli: "npm:4.10.0"
+    webpack-dev-server: "npm:4.15.2"
   languageName: unknown
   linkType: soft
 
@@ -23910,6 +23997,21 @@ __metadata:
 "webpack-config@workspace:config/webpack":
   version: 0.0.0-use.local
   resolution: "webpack-config@workspace:config/webpack"
+  languageName: unknown
+  linkType: soft
+
+"webpack-database@workspace:database/ webpack":
+  version: 0.0.0-use.local
+  resolution: "webpack-database@workspace:database/ webpack"
+  dependencies:
+    "@babel/core": "npm:7.24.7"
+    babel-loader: "npm:9.1.3"
+    effector: "npm:^22.8.7"
+    html-webpack-plugin: "npm:^5.6.0"
+    serve: "npm:13.0.4"
+    webpack: "npm:5.92.1"
+    webpack-cli: "npm:4.10.0"
+    webpack-dev-server: "npm:4.15.2"
   languageName: unknown
   linkType: soft
 

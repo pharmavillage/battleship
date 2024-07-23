@@ -1,4 +1,6 @@
 const { ModuleFederationPlugin } = require("@module-federation/enhanced");
+const { RemoteConfig } = require("remotes-config");
+const pkg = require("./package.json");
 
 module.exports = {
   target: ["web", "es5"],
@@ -28,8 +30,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "remoteLibrary",
-      filename: "remoteEntry.js",
+      ...new RemoteConfig(pkg),
       exposes: {
         // "./Button": "./src/components/button.jsx",
         // "./Header": "./src/components/header.jsx",

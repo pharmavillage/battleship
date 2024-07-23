@@ -1,9 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
+const { veinFinder } = require("remotes-config");
+const pkg = require("./package.json");
 
 module.exports = merge(common, {
   mode: "development",
+  output: {
+    publicPath: "auto", // Automatically determines the publicPath based on the script path
+  },
   entry: "./src",
   plugins: [
     new HtmlWebpackPlugin({
@@ -11,7 +16,7 @@ module.exports = merge(common, {
     }),
   ],
   devServer: {
-    port: 49125,
+    port: veinFinder(pkg["name"]),
     hot: true,
     compress: true,
     watchFiles: ["src/**/*"],

@@ -1,6 +1,4 @@
-
 ---
-
 > "Clemency is the greatest virtue of a ruler; it binds the hearts of the people more firmly than fear."
 
 > "Nero, let your mercy be as grand as your power. For in clemency, you will find the true strength of your empire."
@@ -20,9 +18,7 @@
 > "Clemency cultivates a kingdom of peace and prosperity. The iron fist can break, but a merciful hand builds and sustains."
 
 > "History remembers those who tempered their justice with mercy, and ruled with a heart as well as with an iron will."
-
 ---
-
 These quotes are designed to highlight the importance of mercy and clemency in leadership, encouraging a ruler to be remembered for their compassionate and wise governance.
 
 ![Pharmavillage Logo](https://example.com/logo.png)
@@ -31,7 +27,7 @@ These quotes are designed to highlight the importance of mercy and clemency in l
 
 # Pharmavillage Monorepo
 
-Welcome to the **Pharmavillage Monorepo** – where innovation meets precision, and your pharmaceutical needs are met with the wisdom of ages.
+Welcome to the **Pharmavillage Monorepo** – where innovation meets precision.
 
 > "The ends justify the means."
 > – Niccolò Machiavelli
@@ -60,11 +56,7 @@ Ready to dive in? Here's how to get started:
    ```sh
    git clone https://github.com/pharmavillage/pharmavillage.git
    ```
-2. **Navigate to the project directory:**
-
-   ```sh
-   cd pharmavillage
-   ```
+2. **Navigate to the project directory**
 3. **Install dependencies:**
 
    ```sh
