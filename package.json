@@ -7,8 +7,8 @@
     "dev": "yarn lerna run --parallel dev",
     "deps": "yarn",
     "upgraded": "yarn upgrade-all",
-    "preinstall": "npm install -g yarn && yarn set version berry"
-    "build": "echo built",
+    "preinstall": "npm install -g yarn && yarn set version berry",
+    "build": "echo built"
   },
   "workspaces": {
     "packages": [
