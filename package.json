@@ -7,7 +7,6 @@
     "dev": "yarn lerna run --parallel dev",
     "deps": "yarn",
     "upgraded": "yarn upgrade-all",
-    "preinstall": "npm install -g yarn && yarn set version berry",
     "build": "echo built"
   },
   "workspaces": {
@@ -54,9 +53,9 @@
       "queue/**",
       "router/**",
       "scripts/**",
-      "storybook/**",
       "server/**",
       "source/**",
+      "storybook/**",
       "styles/**",
       "temp/**",
       "templates/**",
@@ -64,8 +63,7 @@
       "types/**",
       "utils/**",
       "vid/**",
-      "views/**",
-      "web/**"
+      "views/**"
     ]
   },
   "devDependencies": {
