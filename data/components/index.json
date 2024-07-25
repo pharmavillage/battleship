@@ -1,0 +1,34 @@
+{
+    "id": "index",
+    "name": "All",
+    "description": "Use this file to add components that represent external resources. An empty array means that the component type is no longer fetched from an external repo.",
+    "type": "stack",
+    "core": [],
+    "docs": [],
+    "modules": [],
+    "clients": [
+        "nredisstack",
+        "go_redis",
+        "node_redis",
+        "redis_py",
+        "jedis"
+    ],
+    "assets": [],
+    "_assets": [
+        "stack_theme",
+        "redis_cli"
+    ],
+    "website": {
+        "path": "./",
+        "content": "content/",
+        "examples": "data/examples.json",
+        "examples_path": "examples",
+        "commands": "data/commands.json",
+        "groups": "data/groups.json",
+        "versions": "data/versions.json",
+        "repos": "data/repos.json",
+        "meta": "data/meta.json",
+        "languages": "data/languages.json",
+        "tool_types": "data/tool_types.json"
+    }
+}

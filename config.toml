@@ -1,0 +1,77 @@
+# The baseURL will be replaced by the build script
+baseURL = "https://redis.io"
+title = "Docs"
+
+refLinksErrorLevel = "WARNING"
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+
+contentDir = "content/"
+
+# ignoreErrors = ["error-remote-getcsv"]
+
+[related]
+[[related.indices]]
+  name = 'group'
+  weight = 1
+  includeNewer = true
+
+# Highlighting config
+pygmentsCodeFences = false
+pygmentsUseClasses = false
+# Use the new Chroma Go highlighter in Hugo.
+pygmentsUseClassic = false
+
+# Configure how URLs look like per section.
+[permalinks]
+blog = "/:section/:year/:month/:day/:slug/"
+
+## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
+[blackfriday]
+plainIDAnchors = true
+hrefTargetBlank = true
+angledQuotes = false
+latexDashes = true
+
+# Image processing configuration.
+[imaging]
+resampleFilter = "CatmullRom"
+quality = 75
+anchor = "smart"
+
+[params]
+tagManagerId = "GTM-TKZ6J9R"
+gitHubRepo = "https://github.com/redis/docs"
+
+# Display and sort order for client examples
+clientsExamples = ["Python", "Node.js", "Java", "Go", "C#"]
+searchService = "/convai/api/search-service"
+ratingsService = "/docusight/api/rate"
+
+# RDI params
+rdi_rlec_min_version = "6.2.18"
+rdi_redis_gears_version = "1.2.6"
+rdi_debezium_server_version = "2.3.0.Final"
+rdi_db_types = "cassandra|mysql|oracle|postgresql|sqlserver"
+rdi_cli_latest = "latest"
+
+# Markup
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      typographer = false
+  [markup.highlight]
+      # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
+      # style = "github-dark"
+      noClasses = "false"
+      # Uncomment if you want your chosen highlight style used for code blocks without a specified language
+      # guessSyntax = "true"
+
+# Everything below this are Site Params
+
+# Comment out if you don't want the "print entire section" link enabled.
+[outputs]
+section = ["HTML", "RSS"] # print

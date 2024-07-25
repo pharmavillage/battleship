@@ -1,0 +1,68 @@
+{{ $base := .Site.BaseURL }}
+{{ $parsed := urls.Parse $base }}
+{{ $path := $parsed.Path }}
+{{ if (eq $path "/") }}
+	{{ .Scratch.Set "path" ""}}
+{{ else }}
+    {{ .Scratch.Set "path" $path}}
+{{ end }}
+{{ $basePath := .Scratch.Get "path" }}
+
+<style>
+  @font-face {
+    font-family: 'Space Mono';
+    src: url('{{ $basePath }}/fonts/SpaceMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Space Mono';
+    src: url('{{ $basePath }}/fonts/SpaceMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('{{ $basePath }}/fonts/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'TT Trailers';
+    src: url('{{ $basePath }}/fonts/TT_Trailers_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Geist';
+    src: url('{{ $basePath }}/fonts/Geist-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Geist Mono';
+    src: url('{{ $basePath }}/fonts/GeistMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+</style>
+
+{{/* Todo: Could probably delete old font files?  */}}
+<link rel="preload" href='{{ $basePath }}/fonts/SpaceMono-Regular.ttf' as="font" type="font/ttf" crossorigin />
+<link rel="preload" href='{{ $basePath }}/fonts/SpaceMono-Bold.ttf' as="font" type="font/ttf" crossorigin />
+<link rel="preload" href='{{ $basePath }}/fonts/SpaceGrotesk-VariableFont_wght.ttf' as="font" type="font/ttf" crossorigin />
+<link rel="preload" href='{{ $basePath }}/fonts/TT_Trailers_Bold.woff2' as="font" type="font/woff2" crossorigin />
+<link rel="preload" href='{{ $basePath }}/fonts/Geist-Regular.woff2' as="font" type="font/woff2" crossorigin />
+<link rel="preload" href='{{ $basePath }}/fonts/GeistMono-Regular.woff2' as="font" type="font/woff2" crossorigin />
+

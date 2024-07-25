@@ -1,0 +1,190 @@
+{{ define "head" }}
+
+{{ $base := .Site.BaseURL }}
+{{ $parsed := urls.Parse $base }}
+{{ $path := $parsed.Path }}
+{{ if (eq $path "/") }}
+	{{ .Scratch.Set "path" ""}}
+{{ else }}
+  {{ .Scratch.Set "path" $path}}
+{{ end }}
+
+<script src='{{ .Scratch.Get "path" }}/js/cli.js' defer></script>
+{{ end }}
+
+{{ define "main" }}
+<main>
+  <header class="relative h-48 bg-redis-ink-900 text-white overflow-hidden">
+    <div class="absolute w-1/2 h-full top-0 left-1/4">
+      <div class="absolute w-fit -top-10 md:-top-6 -right-80 md:-left-96 scale-75 md:scale-100">
+        {{ partial "icons/redis-cube.html" }}
+      </div>
+    </div>
+    <div class="relative max-w-[800px] mx-auto px-5 flex flex-col gap-8 md:items-center justify-center h-full z-10">
+      <h1 class="text-5xl font-medium">{{ .Title }}</h1>
+      {{ with .Params.description }}
+      <p class="text-xl md:text-2xl">{{ . | markdownify }}</p>
+      {{ end }}
+      <form class="flex flex-row items-center border border-white rounded-md px-6 gap-6 w-full md:w-4/5 bg-redis-ink-900" action="/chat">
+        <label class="" for="search-home" id="search-label-home">
+          {{ partial "icons/search.html" }}
+        </label>
+        <input id="seach-home" name="q" class="appearance-none bg-transparent text-base sm:text-lg text-white placeholder-white w-full h-16 focus:outline-none" 
+               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+               placeholder="Ask our AI-powered Redis copilot a question…" maxlength="64" type="text" value="" tabindex=""/>
+        <!--<input type="submit" class="hover:text-redis-pen-300" value="&#x23CE;"/>-->
+        <input class="invisible" type="submit" class="hover:text-redis-pen-300" value=""/>
+      </form>
+    </div>
+  </header>
+  {{ partial "second-header.html" "disabled" }}
+  <div class="flex flex-col lg:flex-row gap-8 mx-auto px-4 md:px-11 py-6 md:py-28 max-w-[1920px]">
+    <div class="lg:sticky lg:top-32 w-full lg:w-64 h-fit lg:h-full shrink-0 text-sm font-mono font-normal">
+      <nav class="lg:hidden w-full lg:w-64 z-40 bg-white h-fit lg:h-full leading-7">
+        <div class="border border-opacity-50 border-redis-ink-900 rounded-md flex flex-col">
+          <button class="px-6 py-4 text-redis-ink-900 font-medium flex justify-between cursor-pointer lg:cursor-default" onclick="dropdownToggle()">
+            <div class="uppercase">Docs</div>
+            <div id="dropdownChevron" class="lg:hidden self-center">{{ partial "icons/chevron.html" }}</div>
+          </button>
+          <div id="dropdown" class="hidden lg:block border-t border-opacity-50 border-redis-ink-900 text-redis-pen-800">
+            <ul class="p-6">
+              <li><a class="py-2 hover:underline hover:text-redis-pen-600" href='{{ .Scratch.Get "path" }}/develop'>Develop with Redis</a></li>
+              <li><a class="py-2 hover:underline hover:text-redis-pen-600" href='{{ .Scratch.Get "path" }}/integrate'>Libraries and tools</a></li>
+              <li><a class="py-2 hover:underline hover:text-redis-pen-600" href='{{ .Scratch.Get "path" }}/operate'>Redis products</a></li>
+              <li><a class="py-2 hover:underline hover:text-redis-pen-600" href='{{ .Scratch.Get "path" }}/commands'>Commands</a></li>
+              <li><a class="py-2 hover:underline hover:text-redis-pen-600">APIs</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <nav class="hidden lg:block w-full lg:w-64 z-40 h-full leading-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-col border border-redis-ink-900 border-opacity-50 rounded-md">
+            <a class="px-6 py-4 rounded-t-md hover:bg-redis-pen-200" href='{{ .Scratch.Get "path" }}/develop'>Develop with Redis</a>
+            <a class="px-6 py-4 hover:bg-redis-pen-200 border-y border-redis-ink-900 border-opacity-50" href='{{ .Scratch.Get "path" }}/integrate'>Libraries and tools</a>
+            <a class="px-6 py-4 rounded-b-md hover:bg-redis-pen-200" href='{{ .Scratch.Get "path" }}/operate'>Redis products</a>
+          </div>
+          <div class="flex flex-col border border-redis-ink-900 border-opacity-50 rounded-md">
+            <a class="px-6 py-4 rounded-t-md hover:bg-redis-pen-200 text-redis-red-600" href='{{ .Scratch.Get "path" }}/commands'>Commands</a>
+            <a class="px-6 py-4 rounded-b-md hover:bg-redis-pen-200 border-t border-redis-ink-900 border-opacity-50" href='{{ .Scratch.Get "path" }}/apis'>APIs</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="lg:px-11 w-full flex flex-col gap-3">
+      <h2 class="text-5xl font-medium" id="operate">Learn</h2>
+        {{ partial "docs-section.html" (dict
+          "Title" "Develop with Redis"
+          "Description" "Learn how to use the Redis in-memory data store."
+	  "ButtonLink" "./develop"
+          "ButtonLabel" "Learn more"
+          "LinksLeftTitle" "Featured content"
+          "LinksLeft" (slice
+            (dict "Text" "Vector search" "URL" "./develop/interact/search-and-query/query/vector-search")
+            (dict "Text" "Data structure store" "URL" "./develop/get-started/data-store/")
+	    (dict "Text" "Document database" "URL" "./develop/get-started/document-database/")
+            )
+          ) }}
+        {{ partial "docs-section.html" (dict
+          "Title" "Libraries and tools"
+          "Description" "Learn about libraries and tools available for Redis."
+          "ButtonLink" "./integrate"
+          "ButtonLabel" "Browse tools"
+          "LinksLeftTitle" "Featured libraries"
+          "LinksLeft" (slice
+            (dict "Text" "RedisVL" "URL" "./integrate/redisvl/")
+            (dict "Text" "RedisOM for Python" "URL" "./integrate/redisom-for-python")
+            (dict "Text" "Ingest" "URL" "./integrate/redis-data-integration/quickstart/ingest-guide/")
+            (dict "Text" "Write-behind" "URL" "./integrate/redis-data-integration/quickstart/write-behind-guide/")
+          )
+        ) }}
+        {{ partial "docs-section.html" (dict
+          "Title" "Redis Data Integration"
+          "Description" "Redis Data Integration keeps Redis in sync with the primary database in near real time."
+          "ButtonLink" "./integrate/redis-data-integration"
+          "ButtonLabel" "Learn more"
+          "LinksLeftTitle" "LEARN MORE"
+          "LinksLeft" (slice
+            (dict "Text" "Quick start" "URL" "./integrate/redis-data-integration/ingest/quick-start-guide")
+            (dict "Text" "Architecture" "URL" "./integrate/redis-data-integration/ingest/architecture")
+            (dict "Text" "Install" "URL" "./integrate/redis-data-integration/ingest/installation")
+            (dict "Text" "Reference" "URL" "./integrate/redis-data-integration/ingest/reference")
+          )
+        ) }}
+        {{ partial "docs-section.html" (dict
+          "Title" "Redis Insight"
+          "Description" "A cross-platform GUI for Redis, with focus on reducing memory usage and improving application performance."
+          "ButtonLink" "./develop/connect/insight/"
+          "ButtonLabel" "Learn more"
+          "LinksLeftTitle" "Learn more"
+          "LinksLeft" (slice
+            (dict "Text" "Install" "URL" "./operate/redisinsight/install/")
+            (dict "Text" "User guide" "URL" "./develop/connect/insight/")
+            (dict "Text" "Manage Streams in Redis Insight" "URL" "./develop/connect/insight/tutorials/insight-stream-consumer/")
+          )
+        ) }}
+      </div>
+      <div class="lg:px-11 w-full flex flex-col gap-3">
+        <h2 class="text-5xl font-medium" id="operate">Explore</h2>
+        {{ partial "docs-section.html" (dict
+          "Title" "Redis and Stack"
+          "Description" "Redis Stack extends Redis with modern data models and processing engines."
+          "ButtonLink" "./operate/oss_and_stack/"
+          "ButtonLabel" "Read more"
+          "LinksLeftTitle" "Learn more"
+          "LinksLeft" (slice
+            (dict "Text" "Install" "URL" "./operate/oss_and_stack/install/install-stack/")
+            (dict "Text" "Search and query" "URL" "./develop/interact/search-and-query/")
+            (dict "Text" "JSON" "URL" "./develop/data-types/json/")
+          )
+        ) }}
+        {{ partial "docs-section.html" (dict
+        "Title" "Redis Cloud"
+        "Description" "Deploy Redis Enterprise on Amazon Web Services, Google Cloud, or Microsoft Azure."
+        "ButtonLink" "./operate/rc"
+        "ButtonLabel" "Read more"
+        "LinksLeftTitle" "Learn more"
+        "LinksLeft" (slice
+          (dict "Text" "Quick start" "URL" "./operate/rc/rc-quickstart/")
+          (dict "Text" "Subscriptions" "URL" "./operate/rc/subscriptions/")
+          (dict "Text" "Databases" "URL" "./operate/rc/databases/")
+	  (dict "Text" "Active-Active" "URL" "./operate/rc/databases/create-database/create-active-active-database/")
+        )
+      ) }}
+      {{ partial "docs-section.html" (dict
+          "Title" "Redis Enterprise Software"
+          "Description" "A self-managed data platform that unlocks the full potential of Redis at enterprise scale."
+          "ButtonLink" "./operate/rs"
+          "ButtonLabel" "Read more"
+          "LinksLeftTitle" "Learn more"
+          "LinksLeft" (slice
+            (dict "Text" "Quick start" "URL" "./operate/rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart/")
+            (dict "Text" "Clusters" "URL" "./operate/rs/clusters/")
+            (dict "Text" "Databases" "URL" "./operate/rs/databases/")
+	    (dict "Text" "Networking" "URL" "./operate/rs/networking/")
+          )
+        ) }}
+        {{ partial "docs-section.html" (dict
+          "Title" "Redis Enterprise for Kubernetes"
+          "Description" "Redis Enterprise deployed on containerized software platforms and integrated with our partners."
+          "ButtonLink" "./operate/kubernetes/"
+          "ButtonLabel" "Read more"
+          "LinksLeftTitle" "Learn more"
+          "LinksLeft" (slice
+            (dict "Text" "Architecture" "URL" "./operate/kubernetes/architecture/")
+            (dict "Text" "Deployments" "URL" "./operate/kubernetes/deployment/")
+            (dict "Text" "Clusters" "URL" "./operate/kubernetes/re-clusters/")
+            (dict "Text" "Databases" "URL" "./operate/kubernetes/re-databases/")
+          )
+        ) }}
+      </div>
+    </div>
+  </div>
+  <script>
+    function dropdownToggle() {
+      document.getElementById('dropdownChevron').classList.toggle('rotate-180');
+      document.getElementById('dropdown').classList.toggle('hidden');
+    }
+  </script>
+</main>
+{{ end }}
