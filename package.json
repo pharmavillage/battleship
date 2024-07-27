@@ -3,7 +3,7 @@
   "private": true,
   "main": "workspaces.yml",
   "scripts": {
-     "serve": "make serve",
+    "serve": "make serve",
     "build": "make all",
     "storybook": "yarn lerna run --parallel storybook",
     "dev": "yarn lerna run --parallel dev",
@@ -68,15 +68,17 @@
     ]
   },
   "devDependencies": {
-    "lerna": "^8.1.6",
-    "strip-ansi": "^6.0.0",
-    "yarn-upgrade-all": "^0.7.2",
+    "@storybook/manager-api": "^8.2.6",
+    "@storybook/theming": "^8.2.6",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
+    "lerna": "^8.1.6",
     "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.1.0",
-    "tailwindcss": "^3.3.5"
+    "strip-ansi": "^6.0.0",
+    "tailwindcss": "^3.3.5",
+    "yarn-upgrade-all": "^0.7.2"
   },
   "packageManager": "yarn@4.3.1"
 }
